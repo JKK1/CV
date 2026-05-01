@@ -44,6 +44,39 @@
         <!-- Main JS -->
         <script src="/static/assets/js/main.js"></script>
 
+        <!-- Print styles: compact spacing for print output -->
+        <style>
+            @media print {
+                body, p, li, address,
+                .o-content__body, .c-intro p,
+                .c-work__heading, .c-work__title, .c-work__location, .c-work__timeframe,
+                h1, h2, h3, h4 {
+                    line-height: 1.25 !important;
+                }
+                p, address { margin: 0 0 0.25em !important; }
+                h1, h2, h3, h4 { margin: 0.35em 0 0.2em !important; }
+                .o-section,
+                .o-section__container,
+                .o-section__header,
+                .o-section__content {
+                    padding-top: 0.5em !important;
+                    padding-bottom: 0.5em !important;
+                }
+                .o-section__heading { margin-bottom: 0.3em !important; }
+                .o-section__description { margin-bottom: 0.5em !important; }
+                .c-timeline__item { padding: 0.4em 0 !important; margin: 0.2em 0 !important; }
+                .o-content, .o-media { margin: 0.25em 0 !important; }
+                .o-grid__col-sm-6, .o-grid__col-md-4, .o-grid__col-md-5, .o-grid__col-md-7 {
+                    padding-top: 0.3em !important;
+                    padding-bottom: 0.3em !important;
+                }
+                hr { margin: 0.4em 0 !important; }
+                .c-preloader, .c-header__social-buttons, .c-footer__social-buttons { display: none !important; }
+                .o-section { page-break-inside: avoid; }
+                .c-timeline__item { page-break-inside: avoid; }
+            }
+        </style>
+
     </head>
 
     <body>
