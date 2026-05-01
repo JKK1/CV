@@ -47,6 +47,8 @@
         <!-- Print styles: compact spacing for print output -->
         <style>
             @media print {
+                @page { margin: 12mm 14mm; }
+
                 body, p, li, address,
                 .o-content__body, .c-intro p,
                 .c-work__heading, .c-work__title, .c-work__location, .c-work__timeframe,
@@ -74,6 +76,28 @@
                 .c-preloader, .c-header__social-buttons, .c-footer__social-buttons { display: none !important; }
                 .o-section { page-break-inside: avoid; }
                 .c-timeline__item { page-break-inside: avoid; }
+
+                /* Compact header so Profile fits on the first page */
+                .o-section--header,
+                .o-section--header .o-section__container,
+                .o-section--header .o-section__header,
+                .o-section--header .o-section__content {
+                    padding-top: 0.2em !important;
+                    padding-bottom: 0.2em !important;
+                }
+                .c-header__avatar { display: none !important; }
+                .c-brand__title { font-size: 1.6em !important; line-height: 1.1 !important; margin: 0 !important; }
+                .c-brand__sub-title { font-size: 0.95em !important; line-height: 1.2 !important; margin: 0.15em 0 0 !important; }
+                .c-header__top { padding: 0 !important; margin: 0 !important; }
+                .c-header__contact { padding: 0 !important; margin: 0.3em 0 0 !important; }
+                .c-header__contact-divider { margin: 0.25em 0 !important; }
+                .c-header__contact h4 { margin: 0 !important; font-size: 0.8em !important; }
+                .c-header__contact p,
+                .c-header__contact address { margin: 0 !important; font-size: 0.9em !important; }
+
+                /* Keep Profile attached to header on page 1 */
+                .o-section--header { page-break-after: avoid !important; break-after: avoid !important; }
+                .o-section--header + .o-section { page-break-before: avoid !important; break-before: avoid !important; }
             }
         </style>
 
